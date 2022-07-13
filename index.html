@@ -12,16 +12,58 @@
       crossorigin="anonymous"
     />
     <script
+      src="https://kit.fontawesome.com/e3abcc0a77.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
       crossorigin="anonymous"
     ></script>
     <title>Vanilla Weather App</title>
   </head>
-  <body>
-    <div class="container">
-      <h1>Hello World</h1>
-    </div>
-    <script src="src/index.js"></script>
-  </body>
+    <body>
+      <div class="container">
+        <div class="weather-app">
+          <input id="city-search" type="text" placeholder="Search for a city">
+          
+          <input id="submit"type="submit"> 
+          <h4>Portland</h4>
+          <ul>
+            <li>Tuesday 06:00</li>
+            <li>Meteor</li>
+          </ul>
+          <div class="row">
+            <div class="col-md-8">
+              <h1><i class="fa-solid fa-meteor"></i> 60°F</h1>
+            </div>
+            <div class="col-md-8">
+              <ul>
+                <li>F | C</li>
+                <li>Precipitation: 103%</li>
+                <li>Humidity: 300%</li>
+                <li>Wind: 666 mph</li>
+              </ul>
+            </div>
+          <div class="col-sm-4">
+            
+              <div class="Mon">
+                <i class="fa-regular fa-clouds-moon"></i>
+                 67°
+                   <em> 49°</em>
+              </div>
+          </div>
+        </div>
+        <small>
+          <a
+            href="https://github.com/leashhub/vanilla-weather-app"
+            target="_blank"
+          >
+            Open Source Code
+          </a>
+          by Leash
+        </small>
+      </div>
+        <script src="src/index.js"></script>
+    </body>
 </html>
