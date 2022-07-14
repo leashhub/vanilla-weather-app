@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <link href="Src/style.css" rel="stylesheet" type="text/css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -23,17 +23,20 @@
     <title>Vanilla Weather App</title>
   </head>
     <body>
-      <div class="container">
+      <div class="container-fluid">
         <div class="weather-app">
+          <div class="search">
           <input id="city-search" type="text" placeholder="Search for a city">
-          
           <input id="submit"type="submit"> 
+          </div>
+          <div class="col-md-8">
           <h4>Portland</h4>
           <ul>
             <li>Tuesday 06:00</li>
             <li>Meteor</li>
           </ul>
-          <div class="row">
+          </div>
+        <div class="row">
             <div class="col-md-8">
               <h1><i class="fa-solid fa-meteor"></i> 60°F</h1>
             </div>
@@ -46,11 +49,76 @@
               </ul>
             </div>
           <div class="col-sm-4">
-            
-              <div class="Mon">
-                <i class="fa-regular fa-clouds-moon"></i>
-                 67°
-                   <em> 49°</em>
+              <div class="card" style="width: 23rem;">
+                  <div class="card-body">
+                    <h5 class="card-title">Monday</h5>
+                    <hr />
+                    <div class="scattaredshowers">
+                      <i class="fa-solid fa-cloud-sun"></i>
+                    </div>
+                  <div class="Mon">77°<em> 45°</em></div>
+                  </div>
+                </div>
+              <div class="card" style="width: 23rem;">
+                  <div class="card-body">
+                    <h5 class="card-title">Tues</h5>
+                    <hr />
+                    <div class="scattaredshowers">
+                      <i class="fa-solid fa-cloud-sun"></i>
+                    </div>
+                  <div class="Tues">77°<em> 45°</em></div>
+                  </div>
+              </div>
+              <div class="card" style="width: 23rem;">
+                  <div class="card-body">
+                    <h5 class="card-title">Wednesday</h5>
+                    <hr />
+                    <div class="scattaredshowers">
+                      <i class="fa-solid fa-cloud-sun"></i>
+                    </div>
+                  <div class="Wed">77°<em> 45°</em></div>
+                  </div>
+              </div>
+                <div class="card" style="width: 23rem;">
+                  <div class="card-body">
+                    <h5 class="card-title">Thursday</h5>
+                    <hr />
+                    <div class="scattaredshowers">
+                      <i class="fa-solid fa-cloud-sun"></i>
+                    </div>
+                  <div class="Thurs">77°<em> 45°</em></div>
+                </div>
+                <div class="card" style="width: 23rem;">
+                  <div class="card-body">
+                    <h5 class="card-title">Friday</h5>
+                    <hr />
+                    <div class="scattaredshowers">
+                      <i class="fa-solid fa-cloud-sun"></i>
+                    </div>
+                  <div class="Friday">77°<em> 45°</em></div>
+                  </div>
+                </div>
+              </div>
+               <div class="card" style="width: 23rem;">
+                  <div class="card-body">
+                    <h5 class="card-title">Saturday</h5>
+                    <hr />
+                    <div class="scattaredshowers">
+                      <i class="fa-solid fa-cloud-sun"></i>
+                    </div>
+                    <div class="Sat">77°<em> 45°</em></div>
+                  </div>
+                </div>
+                 <div class="card" style="width: 23rem;">
+                  <div class="card-body">
+                    <h5 class="card-title">Sunday</h5>
+                    <hr />
+                    <div class="scattaredshowers">
+                      <i class="fa-solid fa-cloud-sun"></i>
+                    </div>
+                    <div class="Sun">77°<em> 45°</em></div>
+                  </div>
+                </div>
               </div>
           </div>
         </div>
@@ -63,7 +131,6 @@
           </a>
           by Leash
         </small>
-      </div>
-        <script src="src/index.js"></script>
+      <script src="src/index.js"></script>
     </body>
 </html>
