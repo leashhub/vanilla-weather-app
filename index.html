@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -26,15 +27,23 @@
     <div class="container">
       <div class="weather-app-wrapper">
         <div class="search">
-          <input id="city-search" type="text" placeholder="Search for a city" />
-          <input id="submit" type="submit" />
+          <form id="search-input">
+            <input
+              id="city-search"
+              type="text"
+              placeholder="Search for a city"
+            />
+            <input id="submit" type="submit" />
+          </form>
         </div>
         <div class="row">
           <div class="col-md-8" id="city-name">
-            <h4>Portland</h4>
+            <h4 id="city"></h4>
             <ul id="today">
-              <li>Tuesday 06:00</li>
-              <li>Meteor</li>
+              <h6>
+                <li>Tuesday 06:00</li>
+                <li id="description"></li>
+              </h6>
             </ul>
             <div class="row2">
               <div class="col-sm-6">
@@ -42,13 +51,12 @@
                   <i class="fa-solid fa-meteor" id="main-icon"></i>
                   <br />
                   <br />
-                  <span class="current-temp"> 60°F</span>
+                  <span class="current-temp"> °F</span>
                 </h1>
                 <ul class="today-specs">
-                  <li>F | C</li>
-                  <li>Precipitation: 103%</li>
-                  <li>Humidity: 300%</li>
-                  <li>Wind: 666 mph</li>
+                  <span class="units">F | <a href="#">C</a> </span>
+                  <li>Humidity: <span id="humidity"></span>%</li>
+                  <li>Wind:<span id="wind"> </span>mph</li>
                 </ul>
               </div>
             </div>
@@ -60,49 +68,49 @@
                   <i class="fa-solid fa-cloud-bolt" id="icons"></i> Monday
                   <br />
                 </div>
-                <span>48°</span>
+                <span class="week-temp">48°</span>
               </li>
               <li class="list-group-item">
                 <div class="tuesday">
                   <i class="fa-solid fa-cloud-bolt" id="icons"></i> Tuesday
                   <br />
                 </div>
-                <span>48°</span>
+                <span class="week-temp">48°</span>
               </li>
               <li class="list-group-item">
                 <div class="wednesday">
                   <i class="fa-solid fa-cloud-bolt" id="icons"></i> Wednesday
                   <br />
                 </div>
-                <span>48°</span>
+                <span class="week-temp">48°</span>
               </li>
               <li class="list-group-item">
                 <div class="thursday">
                   <i class="fa-solid fa-cloud-bolt" id="icons"></i> Thursday
                   <br />
                 </div>
-                <span>48°</span>
+                <span class="week-temp">48°</span>
               </li>
               <li class="list-group-item">
                 <div class="friday">
                   <i class="fa-solid fa-cloud-bolt" id="icons"></i> Friday
                   <br />
                 </div>
-                <span>48°</span>
+                <span class="week-temp">48°</span>
               </li>
               <li class="list-group-item">
                 <div class="saturday">
                   <i class="fa-solid fa-cloud-bolt" id="icons"></i> Saturday
                   <br />
                 </div>
-                <span>48°</span>
+                <span class="week-temp">48°</span>
               </li>
               <li class="list-group-item">
                 <div class="sunday">
                   <i class="fa-solid fa-cloud-bolt" id="icons"></i> Sunday
                   <br />
                 </div>
-                <span>48°</span>
+                <span class="week-temp">48°</span>
               </li>
             </ul>
           </div>
@@ -116,6 +124,11 @@
       </a>
       by Leash
     </small>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
     <script src="src/index.js"></script>
   </body>
 </html>
