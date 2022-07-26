@@ -19,8 +19,9 @@
   border-color: #ede7f6;
 }
 #main-icon {
-  font-size: 300px;
-  text-align: center;
+  display: block;
+  object-position: center;
+  max-width: 600px;
 }
 #today {
   margin-left: 115px;
