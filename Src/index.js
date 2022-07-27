@@ -43,18 +43,20 @@ function displayTemperature(response) {
   iconMainElement.setAttribute = ("src", `/media/${iconElement}.png`);
 }
 
-function search(event) {
-  event.preventDefault();
-  let cityInputElement = document.querySelector("#city-search");
+function search(city) {
+  let apiKey = "7dd23c682ad66c852628ad2d2b23df92";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayTemperature);
 }
 
-let apiKey = "7dd23c682ad66c852628ad2d2b23df92";
-let city = "Portland";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
-console.log(apiUrl);
-axios.get(apiUrl).then(displayTemperature);
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#city-search");
+  search(cityInputElement.value);
+}
+
+search("New York");
 
 let form = document.querySelector("#search-input");
-form.addEventListener("submit", search);
-
-console.log();
+form.addEventListener("submit", handleSubmit);
