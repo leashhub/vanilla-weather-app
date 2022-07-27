@@ -40,7 +40,7 @@ function displayTemperature(response) {
   //change icon
   let iconElement = document.querySelector("#main-icon");
   let iconMainElement = response.data.weather[0].icon;
-  iconElement.setAttribute("src", `/media/${iconMainElement}.png`);
+  iconElement.setAttribute("src", `./media/${iconMainElement}.png`);
 }
 
 function search(city) {
