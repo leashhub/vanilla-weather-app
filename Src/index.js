@@ -8,7 +8,7 @@ function formatDate(timestamp) {
   }
   // get hours
   let hours = date.getHours();
-  if (hours > 10) {
+  if (hours < 10) {
     minutes = `0${hours}`;
   }
 
@@ -40,7 +40,7 @@ function displayTemperature(response) {
   //change icon
   let iconElement = document.querySelector("#main-icon");
   let iconMainElement = response.data.weather[0].icon;
-  iconMainElement.setAttribute = ("src", `/media/${iconElement}.png`);
+  iconElement.setAttribute("src", `/media/${iconMainElement}.png`);
 }
 
 function search(city) {
