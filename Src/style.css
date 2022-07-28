@@ -17,27 +17,35 @@
   border-radius: 4px;
   border-width: 1px;
   border-color: #ede7f6;
-  background-color: #eaeaead0;
+  background-color: #fff;
 }
-.submit {
-  background-color: #eaeaead0;
+
+.fa-input {
+  font-family: FontAwesome, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #ede7f6;
 }
 #main-icon {
   display: flex;
   position: relative;
-  justify-content: space-between;
-  align-items: flex-start;
-  max-width: 600px;
+  margin-left: 260px;
+  margin-top: 150px;
+  justify-content: center;
+  max-width: 450px;
 }
+
 #today {
   margin-left: 115px;
   list-style: none;
   position: relative;
 }
+ul {
+  list-style: none;
+}
 h1 {
   display: block;
   position: relative;
-  margin: 50px;
+
+  margin-right: 150px;
   margin-top: 200px;
   text-align: center;
   font-family: Ubuntu;
@@ -59,7 +67,8 @@ h4 {
 }
 .today-specs {
   display: block;
-  margin-top: 600px;
+  margin-top: 20px;
+  margin-right: 120px;
   font-family: Ubuntu;
 }
 h6 {
@@ -84,15 +93,26 @@ h6 {
 #weekdays {
   display: flex;
   justify-content: center;
+  border-radius: 26px;
 }
 
 .card {
   max-height: 900px;
   margin-top: 40px;
-  background-color: #eaeaead0;
-  opacity: 80%;
+  margin-bottom: 40px;
+  opacity: 75%;
 }
 .fa {
   font-size: 40px;
   margin-bottom: 10px;
+}
+
+small {
+  display: block;
+  text-align: right;
+  margin-right: 65px;
+  color: #aaaaaa;
+}
+a {
+  color: #cecece;
 }

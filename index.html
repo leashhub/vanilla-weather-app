@@ -34,7 +34,7 @@
               placeholder="Search for a city"
               autocomplete="off"
             />
-            <input id="submit" type="submit" />
+            <input id="submit" class="btn fa-input" type="submit" />
           </form>
         </div>
         <div class="row">
@@ -47,18 +47,17 @@
               </h6>
             </ul>
 
-            <div class="row2">
-              <img src="./media/01d.png" alt="weather Image" id="main-icon" />
-              <div class="col-sm-6">
-                <h1><span id="temperature"> </span> °F</h1>
+            <img src="./media/01d.png" alt="weather Image" id="main-icon" />
 
-                <ul class="today-specs">
-                  <span class="units">F | <a href="#">C</a> </span>
-                  <li>Humidity: <span id="humidity"> </span>%</li>
-                  <li>Wind: <span id="wind"></span> mph</li>
-                </ul>
-              </div>
-            </div>
+            <h1><span id="temperature"> </span></h1>
+
+            <ul class="today-specs">
+              <span class="units"
+                ><a href="#" id="c-link">°C</a> | <a href="#" id="f-link">°F</a>
+              </span>
+              <li>Humidity: <span id="humidity"> </span>%</li>
+              <li>Wind: <span id="wind"></span> mph</li>
+            </ul>
           </div>
           <div class="card text-right" style="width: 23rem" id="weekdays">
             <ul class="list-group list-group-flush">
