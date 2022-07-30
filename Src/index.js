@@ -59,17 +59,26 @@ function handleSubmit(event) {
   search(cityInputElement.value);
 }
 
-function showFahrenheightTemp(event) {
+function showFahrenheitTemp(event) {
   event.preventDefault();
-  let fahrenheightTemperature = (celsiusTemperature * 9) / 5 + 32;
   let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = Math.round(fahrenheightTemperature);
+  // remove the active class from the celsius link
+  cLink.classList.remove("active");
+  //add active class to fahrenheit link
+  fLink.classList.add("active");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 
 function showCelsiusTemp(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
 
+  // remove the active class from the fahrenheit link
+  fLink.classList.remove("active");
+  //add active class to celsius link
+  cLink.classList.add("active");
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
@@ -79,9 +88,9 @@ let form = document.querySelector("#search-input");
 form.addEventListener("submit", handleSubmit);
 
 let fLink = document.querySelector("#f-link");
-fLink.addEventListener("click", showFahrenheightTemp);
+fLink.addEventListener("click", showFahrenheitTemp);
 
 let cLink = document.querySelector("#c-link");
 cLink.addEventListener("click", showCelsiusTemp);
 
-search("New York");
+search("Palermo");

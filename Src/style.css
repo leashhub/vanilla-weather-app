@@ -32,7 +32,13 @@
   justify-content: center;
   max-width: 450px;
 }
-
+.units .active {
+  color: goldenrod;
+  cursor: default;
+}
+.units .active:hover {
+  text-decoration: none;
+}
 #today {
   margin-left: 115px;
   list-style: none;
