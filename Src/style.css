@@ -11,7 +11,7 @@
   margin-top: 30px;
   margin-left: 940px;
   padding-bottom: 20px;
-  padding-top: 20px;
+  padding-top: 30px;
 }
 #city-search {
   border-radius: 4px;
@@ -21,17 +21,25 @@
 }
 
 .fa-input {
-  font-family: FontAwesome, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Ubuntu;
   color: #ede7f6;
 }
 #main-icon {
   display: flex;
   position: relative;
-  margin-left: 260px;
+  margin-left: 220px;
   margin-top: 150px;
   justify-content: center;
-  max-width: 450px;
+  max-width: 550px;
+  transform: translatey(0px);
+  animation: float 4s ease-in-out infinite;
 }
+@keyframes float {
+  50% {
+    transform: translate(0, 20px);
+  }
+}
+
 .units .active {
   color: goldenrod;
   cursor: default;
@@ -50,9 +58,8 @@ ul {
 h1 {
   display: block;
   position: relative;
-
-  margin-right: 150px;
-  margin-top: 200px;
+  margin-left: 110px;
+  margin-top: 50px;
   text-align: center;
   font-family: Ubuntu;
 }
@@ -73,8 +80,10 @@ h4 {
 }
 .today-specs {
   display: block;
+  position: fixed;
   margin-top: 20px;
   margin-right: 120px;
+
   font-family: Ubuntu;
 }
 h6 {
@@ -96,18 +105,22 @@ h6 {
   padding-top: 15px;
   margin-bottom: 50px;
 }
+.card {
+  max-height: 900px;
+  margin-top: 40px;
+  margin-bottom: 50px;
+
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
 #weekdays {
   display: flex;
   justify-content: center;
   border-radius: 26px;
 }
 
-.card {
-  max-height: 900px;
-  margin-top: 40px;
-  margin-bottom: 40px;
-  opacity: 75%;
-}
 .fa {
   font-size: 40px;
   margin-bottom: 10px;

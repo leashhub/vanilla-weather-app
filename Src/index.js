@@ -20,6 +20,7 @@ function formatDate(timestamp) {
 
 function displayTemperature(response) {
   //get the temperature
+  celsiusTemperature = response.data.main.temp;
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
   // get the city name
@@ -42,8 +43,6 @@ function displayTemperature(response) {
   let iconMainElement = response.data.weather[0].icon;
   //change the placeholder image to one through APO
   iconElement.setAttribute("src", `./media/${iconMainElement}.png`);
-
-  celsiusTemperature = response.data.main.temp;
 }
 
 function search(city) {
@@ -79,7 +78,7 @@ function showCelsiusTemp(event) {
   fLink.classList.remove("active");
   //add active class to celsius link
   cLink.classList.add("active");
-  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+  temperatureElement.innerHTML = `${Math.round(celsiusTemperature)} °`;
 }
 
 let celsiusTemperature = null;
@@ -93,4 +92,4 @@ fLink.addEventListener("click", showFahrenheitTemp);
 let cLink = document.querySelector("#c-link");
 cLink.addEventListener("click", showCelsiusTemp);
 
-search("Palermo");
+search("Portland");
