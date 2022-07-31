@@ -3,7 +3,7 @@
 }
 .container {
   background-color: black;
-  color: white;
+  color: #ede7f6;
   border-radius: 16px;
 }
 .search {
@@ -19,14 +19,26 @@
   border-color: #ede7f6;
   background-color: #fff;
 }
-
-.fa-input {
-  font-family: Ubuntu;
-  color: #ede7f6;
+#go {
+  border-radius: 50%;
+  border: none;
+  background-color: black;
 }
+#goIcon {
+  color: #fff;
+}
+#goIcon:hover {
+  color: black;
+  background-color: #fff;
+  border: none;
+  border-radius: 50%;
+  transition: ease-in-out;
+  transform: 5%;
+}
+
 #main-icon {
   display: flex;
-  position: relative;
+  position: absolute;
   margin-left: 220px;
   margin-top: 150px;
   justify-content: center;
@@ -78,11 +90,14 @@ h4 {
   display: block;
   margin-left: 400px;
 }
+.container {
+  position: relative;
+}
 .today-specs {
   display: block;
-  position: fixed;
-  margin-top: 20px;
-  margin-right: 120px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 
   font-family: Ubuntu;
 }
@@ -105,6 +120,7 @@ h6 {
   padding-top: 15px;
   margin-bottom: 50px;
 }
+
 .card {
   max-height: 900px;
   margin-top: 40px;
@@ -124,12 +140,12 @@ h6 {
 .fa {
   font-size: 40px;
   margin-bottom: 10px;
+  border-radius: 14px;
 }
 
 small {
   display: block;
-  text-align: right;
-  margin-right: 65px;
+  text-align: center;
   color: #aaaaaa;
 }
 a {
