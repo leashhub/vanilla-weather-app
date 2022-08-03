@@ -5,6 +5,7 @@
   background-color: black;
   color: #ede7f6;
   border-radius: 16px;
+  height: 900px;
 }
 .search {
   display: block;
@@ -51,6 +52,45 @@
     transform: translate(0, 20px);
   }
 }
+.container {
+  position: relative;
+}
+#forecast {
+  height: 750px;
+  width: 400px;
+  position: absolute;
+  right: 60px;
+  top: 100px;
+
+  background-color: white;
+  opacity: 85%;
+
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+.day-text {
+  display: flex;
+
+  justify-content: space-between;
+  color: black;
+
+  height: 30px;
+  font-family: Ubuntu;
+  padding-top: 10px;
+  margin-bottom: 20px;
+}
+.week-temp {
+  position: relative;
+  display: block;
+  margin-top: 35px;
+  left: 4px;
+}
+#weekIcon {
+  height: 50px;
+  width: 50px;
+}
 
 .units .active {
   color: goldenrod;
@@ -64,7 +104,8 @@
   list-style: none;
   position: relative;
 }
-ul {
+ul,
+li {
   list-style: none;
 }
 h1 {
@@ -86,55 +127,16 @@ h4 {
   margin-left: 105px;
 }
 
-.row2 {
-  display: block;
-  margin-left: 400px;
-}
-.container {
-  position: relative;
-}
 .today-specs {
   display: block;
   position: absolute;
   bottom: 0;
   left: 0;
-
   font-family: Ubuntu;
 }
 h6 {
   color: #fff;
   text-transform: capitalize;
-}
-
-.monday,
-.tuesday,
-.wednesday,
-.thursday,
-.friday,
-.saturday,
-.sunday {
-  display: flex;
-  justify-content: space-between;
-  height: 30px;
-  font-family: Ubuntu;
-  padding-top: 15px;
-  margin-bottom: 50px;
-}
-
-.card {
-  max-height: 900px;
-  margin-top: 40px;
-  margin-bottom: 50px;
-
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-}
-#weekdays {
-  display: flex;
-  justify-content: center;
-  border-radius: 26px;
 }
 
 .fa {
@@ -150,4 +152,11 @@ small {
 }
 a {
   color: #cecece;
+}
+
+.max-temp {
+  font-weight: bolder;
+}
+.min-temp {
+  opacity: 0.4;
 }
