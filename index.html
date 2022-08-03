@@ -68,56 +68,26 @@
               <li>Wind: <span id="wind"></span> mph</li>
             </ul>
           </div>
-          <div class="card text-right" style="width: 25rem" id="weekdays">
-            <ul class="list-group list-group-flush">
+        </div>
+        <div class="sidebar">
+          <div class="weather-forecast" id="forecast">
+            <ul class="list-group list-group-flush" style="border-radius: 16px">
               <li class="list-group-item">
-                <div class="monday">
-                  <i class="fa-solid fa-cloud-bolt" id="icons"></i> Monday
-                  <br />
+                <div class="day">
+                  <div class="day-text">
+                    <img
+                      src="http://openweathermap.org/img/wn/50d@2x.png"
+                      alt=""
+                      id="weekIcon"
+                    />Monday
+                    <br />
+                  </div>
+                  <div class="week-temp">
+                    <span class="max-temp">38°</span>/
+                    <span class="min-temp"> 18°</span>
+                  </div>
                 </div>
-                <span class="week-temp">38°/18°</span>
-              </li>
-              <li class="list-group-item">
-                <div class="tuesday">
-                  <i class="fa-solid fa-cloud-bolt" id="icons"></i> Tuesday
-                  <br />
-                </div>
-                <span class="week-temp">48°/28°</span>
-              </li>
-              <li class="list-group-item">
-                <div class="wednesday">
-                  <i class="fa-solid fa-cloud-bolt" id="icons"></i> Wednesday
-                  <br />
-                </div>
-                <span class="week-temp">58°/38°</span>
-              </li>
-              <li class="list-group-item">
-                <div class="thursday">
-                  <i class="fa-solid fa-cloud-bolt" id="icons"></i> Thursday
-                  <br />
-                </div>
-                <span class="week-temp">68°/48°</span>
-              </li>
-              <li class="list-group-item">
-                <div class="friday">
-                  <i class="fa-solid fa-cloud-bolt" id="icons"></i> Friday
-                  <br />
-                </div>
-                <span class="week-temp">78°/58°</span>
-              </li>
-              <li class="list-group-item">
-                <div class="saturday">
-                  <i class="fa-solid fa-cloud-bolt" id="icons"></i> Saturday
-                  <br />
-                </div>
-                <span class="week-temp">88°/68°</span>
-              </li>
-              <li class="list-group-item">
-                <div class="sunday">
-                  <i class="fa-solid fa-cloud-bolt" id="icons"></i> Sunday
-                  <br />
-                </div>
-                <span class="week-temp">98°/88°</span>
+                <hr />
               </li>
             </ul>
           </div>
