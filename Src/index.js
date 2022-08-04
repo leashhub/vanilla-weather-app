@@ -11,51 +11,56 @@ function formatDate(timestamp) {
   if (hours < 10) {
     minutes = `0${hours}`;
   }
-
-  // get day with array
-  let days = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat", "Sun"];
-  let day = days[date.getDay()];
-  return `${day} ${hours}:${minutes}`;
 }
-
-//get each day forecast
+//get each day forecast html
 function displayForecast(response) {
-  let forecast = response.data.daily;
-
   let forecastElement = document.querySelector("#forecast");
 
-  let forecastHTML = `<div class="row">`;
-  forecast.forEach(function (forecastDay, index) {
-    if (index < 6) {
-      forecastHTML =
-        forecastHTML +
-        `
-      <div class="day">
-                  <i class="fa-solid fa-cloud-bolt" id="icons"></i> Monday
-                  <br />
-                </div>
-                 <img
-          src="http://openweathermap.org/img/wn/${
-            forecastDay.weather[0].icon
-          }@2x.png"
-          alt=""
-          width="42"
-        />
-        <div class="weather-forecast-temperatures">
-          <span class="weather-forecast-temperature-max"> ${Math.round(
-            forecastDay.temp.max
-          )}° </span>
-          <span class="weather-forecast-temperature-min"> ${Math.round(
-            forecastDay.temp.min
-          )}° </span>
+  let forecastHTML = `<div class="weekDays">`;
+
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+    <ul class="list-group list-group-flush" style="border-radius: 16px">
+        <li class="list-group-item">
+        <div class="day">
+            <div class="day-text">
+            <img
+                src="http://openweathermap.org/img/wn/50d@2x.png"
+                alt=""
+                id="weekIcon"
+            />
+            ${day}
+            <br />
+            </div>
+            <div class="week-temp">
+            <span class="max-temp">38°</span>/<span class="min-temp"> 18°</span>
+            </div>
         </div>
-      </div>
-  `;
-    }
+        <hr />
+        </li>
+    </ul>;
+   `;
   });
 
-  forecastHTML = forecastHTML + `</div>`;
+  forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
+}
+//get daily temps
+function getForecast(coordinates) {
+  let apiKey = "7dd23c682ad66c852628ad2d2b23df92";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function displayTemperature(response) {
@@ -83,6 +88,8 @@ function displayTemperature(response) {
   let iconMainElement = response.data.weather[0].icon;
   //change the placeholder image to one through APO
   iconElement.setAttribute("src", `./media/${iconMainElement}.png`);
+
+  getForecast(response.data.coord);
 }
 
 function search(city) {
@@ -133,4 +140,3 @@ let cLink = document.querySelector("#c-link");
 cLink.addEventListener("click", showCelsiusTemp);
 
 search("Portland");
-displayForecast();
