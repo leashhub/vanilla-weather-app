@@ -11,9 +11,21 @@ function formatDate(timestamp) {
   if (hours < 10) {
     minutes = `0${hours}`;
   }
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[date.getDay()];
+  return `${day} ${hours}:${minutes}`;
 }
 //get each day forecast html
 function displayForecast(response) {
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="weekDays">`;
@@ -36,20 +48,20 @@ function displayForecast(response) {
         <div class="day">
             <div class="day-text">
             <img
-                src="http://openweathermap.org/img/wn/50d@2x.png"
+                src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"
                 alt=""
                 id="weekIcon"
             />
-            ${day}
+            ${forecastDay.dt}
             <br />
             </div>
             <div class="week-temp">
-            <span class="max-temp">38°</span>/<span class="min-temp"> 18°</span>
+            <span class="max-temp">${forecastDay.temp.max}°</span>/<span class="min-temp"> ${forecastDay.temp.min}°</span>
             </div>
         </div>
         <hr />
         </li>
-    </ul>;
+    </ul>
    `;
   });
 

@@ -90,10 +90,10 @@
 #weekIcon {
   height: 50px;
   width: 50px;
+  display: block;
 }
 .day {
   max-height: 40px;
-  background-color: aqua;
 }
 
 .units .active {
